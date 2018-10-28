@@ -1,0 +1,19 @@
+{
+  "name": "rsschool-codejam",
+  "version": "1.0.0",
+  "description": "Code Jam CoreJS",
+  "main": "sumOfOther.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vladqqqqoo/rsschool-codejam"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/Vladqqqqoo/rsschool-codejam#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
