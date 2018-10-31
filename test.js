@@ -1,6 +1,7 @@
 const assert = require('assert');
 Object.freeze(assert);
 const sumOfOther = require('./sumOfOther');
+const make = require ('./make')
 
 describe ("SumOfOther", function() {
 
@@ -22,5 +23,24 @@ describe ("SumOfOther", function() {
 	it("should return new array, when each element at index 'i' is the sum of the remaining elements of the original array",
 	function () {
 		assert.deepEqual(sumOfOther([-1,-2,-3,-4]),[-9,-8,-7,-6]);
+	})
+});
+
+describe ("make", function() {
+
+	it("should return sum of elements", function () {
+		assert.deepEqual(make(3, 4)(3, 5, 10)(10)((mas)=>mas.reduce((acc,item)=>acc+item)), 35);
+	})
+
+	it("should return count of elements", function () {
+		assert.deepEqual(make(2)(1, 5, -4)((mas)=>mas.length), 4);
+	})
+
+	it("should return a reverse array", function () {
+		assert.deepEqual(make(-3, 4)(8)(-7)((mas)=>mas.reverse()), [-7, 8, 4, -3]);
+	})
+
+	it("should return an array with positive numbers", function () {
+		assert.deepEqual(make(-1, 2)(5)(-5)(11)(-12)((mas)=>mas.filter((item)=>item>0)), [2, 5, 11]);
 	})
 });
